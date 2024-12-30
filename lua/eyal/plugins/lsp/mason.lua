@@ -23,9 +23,12 @@ mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"tsserver",
+		"pyright",
 		"html",
+		"rust_analyzer",
 		"gopls",
 		"cssls",
+		"yamlls",
 		"tailwindcss",
 		"lua_ls",
 		"emmet_ls",
@@ -39,7 +42,9 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
-		"eslint_d", -- ts/js linter
+		"golangci_lint",
+		"eslint",
+		"eslint_d",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,

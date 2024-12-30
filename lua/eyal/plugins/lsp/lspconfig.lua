@@ -46,6 +46,16 @@ end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 lspconfig["html"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -65,7 +75,22 @@ lspconfig["cssls"].setup({
 	on_attach = on_attach,
 })
 
-lspconfig["gopls"].setup({})
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+-- lspconfig["helm_ls"].setup({
+-- 	settings = {
+-- 		["helm-ls"] = {
+-- 			yamlls = {
+-- 				path = "yaml-language-server",
+-- 			},
+-- 		},
+-- 	},
+-- })
+
+-- lspconfig["yamlls"].setup({})
 
 -- configure tailwindcss server
 lspconfig["tailwindcss"].setup({

@@ -42,13 +42,13 @@ return packer.startup(function(use)
 
 			-- Only one of these is needed, not both.
 			"nvim-telescope/telescope.nvim", -- optional
-			"ibhagwan/fzf-lua", -- optional
 		},
 		config = function()
 			-- Your Neogit configuration here
 		end,
 	})
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
+	use({ "junegunn/fzf", run = "./install --bin" })
 
 	use("szw/vim-maximizer") -- maximizes and restores current window
 	-- essential plugins
@@ -118,6 +118,9 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	-- diff and merge
+	use("sindrets/diffview.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()
