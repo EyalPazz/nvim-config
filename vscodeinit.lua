@@ -1,3 +1,6 @@
+require("eyal.core.options")
+require("eyal.core.keymaps-vscode")
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -28,16 +31,16 @@ require("lazy").setup({
 	"numToStr/Comment.nvim",
 
 	-- File Explorer
-	"nvim-tree/nvim-tree.lua",
-	"nvim-tree/nvim-web-devicons",
-
-	-- Statusline
+	-- "nvim-tree/nvim-tree.lua",
+	-- "nvim-tree/nvim-web-devicons",
+	--
+	-- -- Statusline
 	"nvim-lualine/lualine.nvim",
-
-	-- Fuzzy Finder
+	--
+	-- -- Fuzzy Finder
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
-
+	-- { "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+	--
 	-- Autocompletion
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-buffer",
@@ -77,21 +80,34 @@ require("lazy").setup({
 		end,
 	},
 
-	-- Autopairs and autotag
-	"windwp/nvim-autopairs",
+	-- Autopairs and autotag("windwp/nvim-autopairs"),
 	{ "windwp/nvim-ts-autotag", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-
+	--
 	-- Git Integration
-	"lewis6991/gitsigns.nvim",
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-	},
+	-- "lewis6991/gitsigns.nvim",
+	-- {
+	-- 	"NeogitOrg/neogit",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"sindrets/diffview.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- },
 	"sindrets/diffview.nvim",
 	"junegunn/fzf",
 	"christoomey/vim-tmux-navigator",
 })
+-- require("eyal.core.colorscheme")
+require("eyal.plugins.comment")
+-- require("eyal.plugins.nvim-tree")
+require("eyal.plugins.lualine")
+require("eyal.plugins.telescope")
+require("eyal.plugins.nvim-cmp")
+require("eyal.plugins.lsp.mason")
+-- require("eyal.plugins.lsp.lspconfig")
+-- require("eyal.plugins.lsp.lspsaga")
+-- require("eyal.plugins.lsp.null-ls")
+-- require("eyal.plugins.lsp.treesitter")
+require("eyal.plugins.lsp.autopairs")
+-- require("eyal.plugins.gitsigns")
+require("eyal.plugins.neogit")

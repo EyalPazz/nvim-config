@@ -23,12 +23,12 @@ null_ls.setup({
 			command = "golangci-lint",
 			args = { "run", "--out-format", "json", "--issues-exit-code=1", "$DIRNAME" },
 		}),
-		diagnostics.eslint.with({ -- js/ts linter
+        require("none-ls.diagnostics.eslint_d").with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
 				return utils.root_has_file(".eslintrc.js") or utils.root_has_file("eslint.config.mjs") -- change file extension if you use something else
 			end,
-		}),
+        })
 	},
 	-- diagnostics.eslint_d.with({ -- js/ts linter
 	-- 	-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)

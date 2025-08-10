@@ -11,7 +11,14 @@ saga.setup({
   definition = {
     edit = "<CR>",
   },
-  ui = {
+lightbulb = {
+    enable = true,
+    sign = true,
+    virtual_text = true,
+    -- new debounce and priority if needed
+  },
+  ui =  {
+    code_action = '💡',
     colors = {
       normal_bg = "#022746",
     },

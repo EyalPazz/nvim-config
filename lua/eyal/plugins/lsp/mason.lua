@@ -31,6 +31,7 @@ mason_lspconfig.setup({
 		"yamlls",
 		"tailwindcss",
 		"lua_ls",
+		"helm_ls",
 		"emmet_ls",
 	},
 	-- auto-install configured servers (with lspconfig)
@@ -43,7 +44,6 @@ mason_null_ls.setup({
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
 		"golangci_lint",
-		"eslint",
 		"eslint_d",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
